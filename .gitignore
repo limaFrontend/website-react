@@ -73,6 +73,7 @@ typings/
 /build
 
 # misc
+src/index.js
 .DS_Store
 .env.local
 .env.development.local
