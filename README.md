@@ -39,4 +39,5 @@
 - como instalar morph-ui (@morph-ui/core) [?]
 - como instalar react-router-dom 
 - ver la documentacion de react router 4
+- configurar firebase en el proyecto
 
