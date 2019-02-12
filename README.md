@@ -27,10 +27,10 @@
 
 **2. Confirar firebase tools**
 
-instalar firebase-tools
-firebase logout
-firebase login (mixc21@gmail.com)
-firebase init
+- instalar firebase-tools
+- firebase logout
+- firebase login (mixc21@gmail.com)
+- firebase init
 
 **3. Configurar proyecto de react**
 
