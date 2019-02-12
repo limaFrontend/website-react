@@ -1,25 +1,30 @@
 import React, { Component, Fragment } from 'react';
 import Card from '../component/Card'
+import * as firebase from 'firebase';
 
 export default class Gallery extends Component {
 
+    state = {
+        movies: {}
+    }
 
+    loadMovies = () => {
+
+
+    }
+
+    componentDidMount() {
+        const loadMovies = firebase.database().ref('peliculas');
+
+        loadMovies.on('value', (snapshot) => {
+            this.setState({
+                movies: snapshot.val()
+            })
+            console.log(this.state);
+        });
+    }
 
     render() {
-
-        const movies = [{
-            "title": "Aquaman",
-            "image": "https://i.ibb.co/1nmJMpQ/aquaman.jpg",
-            "description": "Aquaman debe recuperar el legendario Tridente de Atlan para salvar a la ciudad subacuática de Atlantis, y al mundo de la superficie, de su hermano hambriento de poder."
-        }, {
-            "title": "Aquaman",
-            "image": "https://i.ibb.co/1nmJMpQ/aquaman.jpg",
-            "description": "Aquaman debe recuperar el legendario Tridente de Atlan para salvar a la ciudad subacuática de Atlantis, y al mundo de la superficie, de su hermano hambriento de poder."
-        }, {
-            "title": "Aquaman",
-            "image": "https://i.ibb.co/1nmJMpQ/aquaman.jpg",
-            "description": "Aquaman debe recuperar el legendario Tridente de Atlan para salvar a la ciudad subacuática de Atlantis, y al mundo de la superficie, de su hermano hambriento de poder."
-        }];
 
         return (
             <Fragment>
@@ -27,13 +32,15 @@ export default class Gallery extends Component {
                 <div className="flex">
                     <div className="row">
                         {
-                            movies.map((movie, index) => {
+                            Object.entries(this.state.movies).map((item, index) => {
+                                const movie = item[1];
+                                console.log(movie);
                                 return (
                                     <div className="column padding-5" key={index}>
                                         <Card
-                                            title={movie.title}
+                                            title={movie.titulo}
                                             img={movie.image}
-                                            description={movie.description}
+                                            description={movie.Resumen}
                                             btntext="Reservar"
                                         />
                                     </div>
