@@ -6,12 +6,12 @@ import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
 
 const config = {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: ""
+    apiKey: "AIzaSyCseDZdTnPsfWVWq-Zdi-N6qC3PEcRFvAo",
+    authDomain: "prueba-firebase-vivo.firebaseapp.com",
+    databaseURL: "https://prueba-firebase-vivo.firebaseio.com",
+    projectId: "prueba-firebase-vivo",
+    storageBucket: "prueba-firebase-vivo.appspot.com",
+    messagingSenderId: "187438902560"
 };
 
 firebase.initializeApp(config);
