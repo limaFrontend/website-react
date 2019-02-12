@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
+import '@morph-ui/core/morph-1.9.9.css';
 
 const config = {
     apiKey: "AIzaSyCseDZdTnPsfWVWq-Zdi-N6qC3PEcRFvAo",
