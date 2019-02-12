@@ -10,8 +10,11 @@ class App extends Component {
       <div className="App">
         <Header
           color="black"
-          title="Cinemundo" />
-        <Gallery />
+          title="Cinemundo" 
+        />
+        <div className="container">
+          <Gallery />
+        </div>
       </div>
     );
   }

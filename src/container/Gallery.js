@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Card from '../component/Card'
 
 export default class Gallery extends Component {
@@ -22,25 +22,27 @@ export default class Gallery extends Component {
         }];
 
         return (
-
-            <div className="flex">
-                <div className="row">
-                    {
-                        movies.map((movie, index) => {
-                            return (
-                                <div className="column" key={index}>
-                                    <Card
-                                        title={movie.title}
-                                        img={movie.image}
-                                        description={movie.description}
-                                        btntext="Reservar"
-                                    />
-                                </div>
-                            );
-                        })
-                    }
+            <Fragment>
+                <h5 className="margin-top-9 margin-bottom-9">Estrenos</h5>
+                <div className="flex">
+                    <div className="row">
+                        {
+                            movies.map((movie, index) => {
+                                return (
+                                    <div className="column padding-5" key={index}>
+                                        <Card
+                                            title={movie.title}
+                                            img={movie.image}
+                                            description={movie.description}
+                                            btntext="Reservar"
+                                        />
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
                 </div>
-            </div>
+            </Fragment>
 
 
         );
