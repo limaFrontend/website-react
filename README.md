@@ -1,18 +1,28 @@
-
-## Comandos disponibles
-
-### `npm start`
-
-### `npm test`
-
-### `npm run build`
-
 **Requisitos**
+
+- Tener instalado NodeJS (https://nodejs.org/es/download/)
+- Tener instalado GIT (https://git-scm.com/downloads)
+- Cualquier editor de tu preferencia (Abajo recomendados):
+  - Visual Studio Code (https://code.visualstudio.com/)
+  - Atom (https://atom.io/)
+  - Brackets (http://brackets.io/)
+
+**Conocimientos deseados**
 
 - GIT / Nivel intermedio
 - ES6 / Nivel basico
 - React / Nivel basico
 - CSS nivel intermedio
+
+## Comandos disponibles
+
+`npm start`
+
+`npm test`
+
+`npm run build`
+
+## Pasos a seguir
 
 **1. Configuracion de dominio, hosting y appweb de firebase**
 
@@ -41,3 +51,8 @@
 - ver la documentacion de react router 4
 - configurar firebase en el proyecto
 
+**4. Hacer el layout y componentes**
+
+- Usar los componentes
+- Conectar con la BD
+- Integrar algunas funcionalidades
