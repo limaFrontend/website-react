@@ -32,7 +32,7 @@ firebase logout
 firebase login (mixc21@gmail.com)
 firebase init
 
-**3. Configurar proyecto de react**
+**3. Configurar proyecto de react
 
 - como instalar create-react-app
 - instala instalar firebase 4 
