@@ -8,7 +8,7 @@ export default class Gallery extends Component {
         movies: []
     }
 
-    getList = (data) => {
+    getArrayList = (data) => {
         return Object.entries(data).map(item => item[1]);
     }
 
@@ -17,7 +17,7 @@ export default class Gallery extends Component {
 
         loadMovies.on('value', (snapshot) => {
             this.setState({
-                movies: this.getList(snapshot.val())
+                movies: this.getArrayList(snapshot.val())
             })
         });
     }
