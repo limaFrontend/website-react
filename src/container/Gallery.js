@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Card from '../component/Card'
-import * as firebase from 'firebase';
+import Movies from '../utils/Movies';
 
 export default class Gallery extends Component {
 
@@ -8,18 +8,13 @@ export default class Gallery extends Component {
         movies: []
     }
 
-    getArrayList = (data) => {
-        return Object.entries(data).map(item => item[1]);
-    }
-
     componentDidMount() {
-        const loadMovies = firebase.database().ref('peliculas');
 
-        loadMovies.on('value', (snapshot) => {
+        Movies.loadMovies(data => {
             this.setState({
-                movies: this.getArrayList(snapshot.val())
-            })
-        });
+                movies: Movies.getMovieList(data.val())
+            });
+        })
     }
 
     render() {
