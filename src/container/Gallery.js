@@ -1,30 +1,25 @@
 import React, { Component, Fragment } from 'react';
 import Card from '../component/Card'
-import * as firebase from 'firebase';
+import Movies from '../utils/Movies';
 
 export default class Gallery extends Component {
 
     state = {
-        movies: {}
-    }
-
-    loadMovies = () => {
-
-
+        movies: []
     }
 
     componentDidMount() {
-        const loadMovies = firebase.database().ref('peliculas');
 
-        loadMovies.on('value', (snapshot) => {
+        Movies.loadMovies(data => {
             this.setState({
-                movies: snapshot.val()
-            })
-            console.log(this.state);
-        });
+                movies: Movies.getMovieList(data.val())
+            });
+        })
     }
 
     render() {
+
+        const movies = this.state.movies;
 
         return (
             <Fragment>
@@ -32,15 +27,12 @@ export default class Gallery extends Component {
                 <div className="flex">
                     <div className="row">
                         {
-                            Object.entries(this.state.movies).map((item, index) => {
-                                const movie = item[1];
-                                console.log(movie);
+                            movies.map((movie, index) => {
                                 return (
                                     <div className="column padding-5" key={index}>
                                         <Card
                                             title={movie.titulo}
                                             img={movie.image}
-                                            description={movie.Resumen}
                                             btntext="Reservar"
                                         />
                                     </div>

@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 import Header from './component/Header';
 import Gallery from './container/Gallery';
+import MovieDetail from './container/MovieDetail';
 
 class App extends Component {
   render() {
@@ -10,10 +11,15 @@ class App extends Component {
       <div className="App">
         <Header
           color="black"
-          title="Cinemundo" 
+          title="Cinemundo"
         />
         <div className="container">
-          <Gallery />
+          <Router>
+            <Fragment>              
+              <Route exact path="/" component={Gallery} />
+              <Route path="/movie/:movie" component={MovieDetail} />
+            </Fragment>
+          </Router>
         </div>
       </div>
     );
